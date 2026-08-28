@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Propiedades</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <header>
+    <h1>Inmobiliaria</h1>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="propiedades.html">Propiedades</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#acerca">Acerca de</a>
+        <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <div>
+        <a href="index.html#contacto">Programar visita</a>
+    </div>
+</header>
+
+
+    <main class="pagina-propiedades">
+
+        <div class="catalogo-propiedades">
+
+            <!-- =========================
+                 FILTROS
+            ========================== -->
+
+            <aside class="filtros">
+
+                <h2>Filtros</h2>
+
+                <div class="filtro-grupo">
+                    <h3>Rango de precio</h3>
+
+                    <div class="precio-rango">
+
+                        <input
+                            type="number"
+                            id="precioMin"
+                            placeholder="Mín."
+                        >
+
+                        <span>-</span>
+
+                        <input
+                            type="number"
+                            id="precioMax"
+                            placeholder="Máx."
+                        >
+
+                    </div>
+                </div>
+
+
+                <div class="filtro-grupo">
+
+                    <h3>Habitaciones y baños</h3>
+
+                    <div class="beds-baths">
+
+                        <select id="filtroHabitaciones">
+                            <option value="">Habitaciones</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                            <option value="5">5+</option>
+                        </select>
+
+
+                        <select id="filtroBanos">
+                            <option value="">Baños</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="filtro-grupo">
+
+                    <h3>Tipo de propiedad</h3>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="tipo"
+                            value="casa"
+                        >
+                        Casa
+                    </label>
+
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="tipo"
+                            value="apartamento"
+                        >
+                        Apartamento
+                    </label>
+
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="tipo"
+                            value="terreno"
+                        >
+                        Terreno
+                    </label>
+
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="tipo"
+                            value="penthouse"
+                        >
+                        Penthouse
+                    </label>
+
+                </div>
+
+
+                <div class="filtro-grupo">
+
+                    <h3>Operación</h3>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="operacion"
+                            value="comprar"
+                        >
+                        Venta
+                    </label>
+
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="operacion"
+                            value="rentar"
+                        >
+                        Renta
+                    </label>
+
+                </div>
+
+
+                <button id="aplicarFiltros">
+                    Aplicar filtros
+                </button>
+
+            </aside>
+
+
+            <!-- =========================
+                 PROPIEDADES
+            ========================== -->
+
+            <section class="listado-propiedades">
+
+                <div class="listado-header">
+
+                    <div>
+                        <h1>Propiedades exclusivas</h1>
+
+                        <p id="cantidadResultados"></p>
+                    </div>
+
+
+                    <div class="ordenar">
+
+                        <label for="ordenPropiedades">
+                            Ordenar:
+                        </label>
+
+
+                        <select id="ordenPropiedades">
+
+                            <option value="recientes">
+                                Más recientes
+                            </option>
+
+                            <option value="precio-menor">
+                                Precio: menor a mayor
+                            </option>
+
+                            <option value="precio-mayor">
+                                Precio: mayor a menor
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- JS INSERTARÁ AQUÍ LAS TARJETAS -->
+
+                <div
+                    class="propiedades-catalogo-grid"
+                    id="contenedorPropiedades">
+                </div>
+
+
+                <!-- PAGINACIÓN -->
+
+                <div
+                    class="paginacion"
+                    id="paginacion">
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
