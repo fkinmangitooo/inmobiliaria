@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalle de propiedad</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MISMO HEADER -->
+    <header>
+        <h1>Inmobiliaria</h1>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="propiedades.html">Propiedades</a>
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#acerca">Acerca de</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+
+        <div>
+            <a href="#contactarPropiedad">
+                Programar visita
+            </a>
+        </div>
+    </header>
+
+
+    <main class="detalle-propiedad">
+
+        <!-- =========================
+             GALERÍA
+        ========================== -->
+
+        <section class="galeria-propiedad">
+
+            <div class="galeria-principal">
+
+                <span class="detalle-etiqueta">
+                    VENTA
+                </span>
+
+                <img
+                    src="./casa1.webp"
+                    alt="Propiedad"
+                    id="imagenPrincipal"
+                >
+
+            </div>
+
+
+            <div class="galeria-secundaria">
+
+                <img
+                    src="./img/casa1-interior.jpg"
+                    alt="Interior"
+                >
+
+                <img
+                    src="./img/casa1-cocina.jpg"
+                    alt="Cocina"
+                >
+
+                <div class="galeria-final">
+
+                    <img
+                        src="./img/casa1-patio.jpg"
+                        alt="Exterior"
+                    >
+
+                    <button id="verFotos">
+                        Ver todas las fotos
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTENIDO
+        ========================== -->
+
+        <div class="detalle-layout">
+
+
+            <!-- COLUMNA IZQUIERDA -->
+
+            <div class="detalle-contenido">
+
+                <section class="detalle-encabezado">
+
+                    <div>
+
+                        <h1 id="detalleTitulo">
+                            Casa en Zona 15
+                        </h1>
+
+                        <p id="detalleUbicacion">
+                            Zona 15, Ciudad de Guatemala
+                        </p>
+
+                    </div>
+
+
+                    <div class="detalle-precio">
+
+                        <h2 id="detallePrecio">
+                            Q2,500,000
+                        </h2>
+
+                        <span>VENTA</span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- DATOS -->
+
+                <section class="detalle-datos">
+
+                    <div>
+                        <strong>4</strong>
+                        <span>Habitaciones</span>
+                    </div>
+
+                    <div>
+                        <strong>3</strong>
+                        <span>Baños</span>
+                    </div>
+
+                    <div>
+                        <strong>320 m²</strong>
+                        <span>Construcción</span>
+                    </div>
+
+                    <div>
+                        <strong>2</strong>
+                        <span>Parqueos</span>
+                    </div>
+
+                </section>
+
+
+                <!-- DESCRIPCIÓN -->
+
+                <section class="detalle-seccion">
+
+                    <h2>Acerca de esta propiedad</h2>
+
+                    <p>
+                        Hermosa residencia ubicada en una de las zonas
+                        residenciales más atractivas de la ciudad.
+                        Cuenta con ambientes amplios, excelente iluminación
+                        natural y espacios diseñados para ofrecer comodidad
+                        a toda la familia.
+                    </p>
+
+                    <p>
+                        La propiedad dispone de sala, comedor, cocina,
+                        dormitorios espaciosos, jardín y áreas ideales
+                        para reuniones familiares.
+                    </p>
+
+                </section>
+
+
+                <!-- CARACTERÍSTICAS -->
+
+                <section class="detalle-seccion">
+
+                    <h2>Comodidades y características</h2>
+
+                    <div class="caracteristicas-grid">
+
+                        <span>✓ Jardín</span>
+                        <span>✓ Seguridad</span>
+
+                        <span>✓ Cocina equipada</span>
+                        <span>✓ Área de lavandería</span>
+
+                        <span>✓ Parqueo</span>
+                        <span>✓ Balcón</span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- UBICACIÓN -->
+
+                <section class="detalle-seccion">
+
+                    <h2>Ubicación</h2>
+
+                    <div class="mapa-propiedad">
+
+                        <p>
+                            Zona 15, Ciudad de Guatemala
+                        </p>
+
+                        <span>
+                            Aquí podremos colocar el mapa de la propiedad
+                        </span>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- =========================
+                 FORMULARIO DERECHA
+            ========================== -->
+
+            <aside
+                class="contacto-propiedad"
+                id="contactarPropiedad"
+            >
+
+                <h2>
+                    ¿Te interesa esta propiedad?
+                </h2>
+
+                <p>
+                    Solicita más información o programa una visita.
+                </p>
+
+
+                <form id="formPropiedad">
+
+                    <label for="nombrePropiedad">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombrePropiedad"
+                        placeholder="Tu nombre"
+                        required
+                    >
+
+
+                    <label for="correoPropiedad">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correoPropiedad"
+                        placeholder="correo@ejemplo.com"
+                    >
+
+
+                    <label for="telefonoPropiedad">
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefonoPropiedad"
+                        placeholder="+502 0000-0000"
+                        required
+                    >
+
+
+                    <label for="mensajePropiedad">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="mensajePropiedad"
+                        rows="5"
+                        placeholder="Me gustaría obtener más información sobre esta propiedad..."
+                    ></textarea>
+
+
+                    <button type="submit">
+                        Solicitar información
+                    </button>
+
+                </form>
+
+
+                <div class="asesor-propiedad">
+
+                    <div class="asesor-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Asesor inmobiliario</strong>
+                        <span>Atención personalizada</span>
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
