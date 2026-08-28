@@ -147,7 +147,7 @@ main {
     width: 100%;
 }
 
-main section {
+.hero {
     position: relative;
 
     width: 100%;
@@ -168,7 +168,7 @@ main section {
 
 /* Imagen principal */
 
-main section > img {
+.hero > img {
     position: absolute;
 
     top: 0;
@@ -185,7 +185,7 @@ main section > img {
 
 /* Oscurecimiento de la imagen */
 
-main section::before {
+.hero::before {
     content: "";
 
     position: absolute;
@@ -205,7 +205,7 @@ main section::before {
    TEXTO HERO
 ================================ */
 
-main section > h1 {
+.hero > h1 {
     color: #ffffff;
 
     font-family: Georgia, "Times New Roman", serif;
@@ -223,7 +223,7 @@ main section > h1 {
 }
 
 
-main section > p {
+.hero > p {
     color: #ffffff;
 
     font-size: 15px;
@@ -586,7 +586,7 @@ footer {
     }
 
 
-    main section {
+    .hero {
         min-height: 720px;
 
         justify-content: center;
@@ -595,12 +595,12 @@ footer {
     }
 
 
-    main section > h1 {
+    .hero > h1 {
         font-size: 36px;
     }
 
 
-    main section > p {
+    .hero > p {
         margin-bottom: 35px;
     }
 
@@ -657,4 +657,316 @@ footer {
 
         height: 55px;
     }
+}
+
+
+
+
+/* ==============================
+   PROPIEDADES DESTACADAS
+================================ */
+
+.propiedades-destacadas {
+    width: 100%;
+
+    padding: 65px 4% 70px;
+
+    /* Fondo casi blanco como la referencia */
+    background: #f8f9fa;
+
+    color: #111;
+}
+
+
+/* ==============================
+   ENCABEZADO
+================================ */
+
+.propiedades-header {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto 32px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* TÍTULO */
+
+.propiedades-header h2 {
+    margin: 0 0 7px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #0c0c0c;
+}
+
+
+/* SUBTÍTULO */
+
+.propiedades-header p {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    color: #59616b;
+}
+
+
+/* VER TODAS */
+
+.ver-todas {
+    margin-bottom: 1px;
+
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #8b6a18;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+
+    white-space: nowrap;
+}
+
+.ver-todas:hover {
+    color: #111;
+}
+
+
+/* ==============================
+   GRID
+================================ */
+
+.propiedades-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+
+/* ==============================
+   TARJETAS
+================================ */
+
+.propiedad-card {
+    background: #ffffff;
+
+    border: 1px solid #e8ebee;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.propiedad-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==============================
+   IMAGEN
+================================ */
+
+.propiedad-imagen {
+    position: relative;
+
+    width: 100%;
+
+    height: 235px;
+
+    overflow: hidden;
+}
+
+
+.propiedad-imagen img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+.propiedad-card:hover .propiedad-imagen img {
+    transform: scale(1.035);
+}
+
+
+/* ==============================
+   ETIQUETA
+================================ */
+
+.propiedad-imagen span {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    z-index: 2;
+
+    padding: 5px 10px;
+
+    border-radius: 1px;
+
+    background: #050505;
+
+    color: #ffffff;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    text-transform: uppercase;
+}
+
+
+/* ==============================
+   INFORMACIÓN DE TARJETA
+================================ */
+
+.propiedad-info {
+    padding: 17px 18px 16px;
+}
+
+
+/* PRECIO */
+
+.propiedad-info h3 {
+    margin: 0 0 7px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    color: #111111;
+}
+
+
+/* UBICACIÓN */
+
+.propiedad-ubicacion {
+    margin: 0 0 14px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+
+    color: #536477;
+}
+
+
+/* ==============================
+   DATOS INFERIORES
+================================ */
+
+.propiedad-datos {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid #e6e8eb;
+}
+
+
+.propiedad-datos span {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    color: #313b46;
+}
+
+
+/* ==============================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    .propiedades-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==============================
+   MÓVIL
+================================ */
+
+@media (max-width: 650px) {
+
+    .propiedades-destacadas {
+        padding: 45px 20px;
+    }
+
+
+    .propiedades-header {
+        align-items: flex-start;
+    }
+
+
+    .propiedades-header h2 {
+        font-size: 25px;
+    }
+
+
+    .propiedades-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .propiedad-imagen {
+        height: 230px;
+    }
+
 }
