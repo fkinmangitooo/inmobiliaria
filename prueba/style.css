@@ -428,23 +428,34 @@ main section > p {
 #BuscarPropiedades {
     align-self: center;
 
-    min-width: 135px;
+    /* Tamaño */
+    width: 140px;
     height: 55px;
 
-    margin-left: 8px;
+    /* Posición dentro del buscador */
+    margin-left: 10px;
+    margin-right: 0;
 
+    /* Espacio interno */
     padding: 0 22px;
 
+    /* Diseño */
     border: none;
     border-radius: 4px;
 
     background: #050505;
     color: #ffffff;
 
-    font-size: 12px;
+    /* Texto */
+    font-size: 11px;
     font-weight: 700;
-
     text-transform: uppercase;
+
+    /* Alinear texto + SVG */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
     cursor: pointer;
 
@@ -454,10 +465,29 @@ main section > p {
 }
 
 
-#BuscarPropiedades::before {
-    content: "⌕";
+/* ==============================
+   SVG DE LA LUPA
+================================ */
+
+#BuscarPropiedades svg {
+    width: 17px;
+    height: 17px;
+
+    /* Pone la lupa ANTES del texto */
+    order: -1;
+
+    /* Evita que se deforme */
+    flex-shrink: 0;
+
+    /* El SVG usa currentColor,
+       así que hereda el blanco del botón */
+    color: #ffffff;
 }
 
+
+/* ==============================
+   HOVER
+================================ */
 
 #BuscarPropiedades:hover {
     background: #222;
