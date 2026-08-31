@@ -1,5 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html
 <html lang="es">
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +10,60 @@
     <title>Inmobiliaria</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chat.css">
 </head>
 
-<body>
+<script src="chat/chat.js"></script>
 
-    
+<body>
+<link rel="stylesheet" href="style.css">
+  <div id="chat-widget">
+
+    <!-- BOTÓN FLOTANTE -->
+    <button id="chat-button" class="chat-button">
+        💬
+    </button>
+
+    <!-- CHAT -->
+    <div id="chat-container" class="chat-container">
+
+        <div class="chat-header">
+            <div>
+                <strong>Asistente virtual</strong>
+                <small>Inmobiliaria</small>
+            </div>
+
+            <button id="chat-close" class="chat-close">
+                ×
+            </button>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+            <div class="chat-message bot">
+                👋 Hola, soy el asistente virtual de la inmobiliaria.
+                <br><br>
+                En este momento el chatbot no está disponible.
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <input
+                type="text"
+                id="chat-input"
+                class="chat-input"
+                placeholder="Escribe un mensaje..."
+            >
+
+            <button id="chat-send" class="chat-send">
+                ➤
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+
 
     <!-- =========================================
          INTRO / ANIMACIÓN DE LA CASA
@@ -530,6 +581,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
     <script src="script.js"></script>
+    <script src="chat.js"></script>
 
 </body>
 

@@ -2434,3 +2434,227 @@ footer {
     position: relative;
     z-index: 2;
 }
+
+
+#chatbot {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+}
+
+
+/* ==========================================
+   BOTÓN FLOTANTE DEL CHAT
+========================================== */
+
+.chat-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #1f2937;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    z-index: 9999;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.chat-button:hover {
+    transform: scale(1.08);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==========================================
+   VENTANA DEL CHAT
+========================================== */
+
+.chat-container {
+    position: fixed;
+
+    right: 25px;
+    bottom: 95px;
+
+    width: 350px;
+    height: 480px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    z-index: 9998;
+
+    display: none;
+
+    flex-direction: column;
+}
+
+
+/* Cuando el chat está abierto */
+
+.chat-container.active {
+    display: flex;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.chat-header {
+    padding: 18px;
+
+    background: #1f2937;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-header h3 {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+.chat-close {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   MENSAJES
+========================================== */
+
+.chat-messages {
+    flex: 1;
+
+    padding: 18px;
+
+    overflow-y: auto;
+
+    background: #f8f8f8;
+}
+
+.chat-message {
+    max-width: 80%;
+
+    padding: 10px 14px;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+}
+
+.chat-message.bot {
+    background: white;
+    color: #333;
+}
+
+.chat-message.user {
+    margin-left: auto;
+
+    background: #1f2937;
+    color: white;
+}
+
+
+/* ==========================================
+   INPUT
+========================================== */
+
+.chat-input-container {
+    display: flex;
+
+    padding: 12px;
+
+    border-top: 1px solid #ddd;
+
+    background: white;
+}
+
+.chat-input {
+    flex: 1;
+
+    border: 1px solid #ddd;
+
+    border-radius: 20px;
+
+    padding: 10px 14px;
+
+    outline: none;
+}
+
+.chat-send {
+    margin-left: 8px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #1f2937;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   MÓVIL
+========================================== */
+
+@media (max-width: 600px) {
+
+    .chat-container {
+        right: 15px;
+        bottom: 85px;
+
+        width: calc(100% - 30px);
+
+        height: 70vh;
+    }
+
+    .chat-button {
+        right: 18px;
+        bottom: 18px;
+    }
+}
