@@ -2397,3 +2397,40 @@ footer {
 .catalogo-card {
     cursor: pointer;
 }
+
+
+
+
+
+/* =========================================
+   INTRO - ANIMACIÓN DE LA CASA
+========================================= */
+
+.house-animation {
+    height: 400vh;
+    position: relative;
+    background: #000;
+}
+
+#houseCanvas {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: block;
+}
+
+
+/* =========================================
+   CONTENIDO DE LA PÁGINA
+========================================= */
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 2;
+}

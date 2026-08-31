@@ -885,3 +885,162 @@ if (
     mostrarPropiedades();
 
 }
+
+
+
+
+
+
+
+// ==========================================
+// ANIMACIÓN DE LA CASA
+// Frames 050 - 274
+// ==========================================
+
+gsap.registerPlugin(ScrollTrigger);
+
+const canvas = document.getElementById("houseCanvas");
+const ctx = canvas.getContext("2d");
+
+const firstFrame = 50;
+const lastFrame = 274;
+
+const frameCount = lastFrame - firstFrame + 1;
+
+const images = [];
+
+const animation = {
+    frame: 0
+};
+
+
+// ==========================================
+// CARGAR FRAMES
+// ==========================================
+
+for (let i = firstFrame; i <= lastFrame; i++) {
+
+    const img = new Image();
+
+    img.src = `../frames/ezgif-frame-${String(i).padStart(3, "0")}.jpg`;
+
+    images.push(img);
+}
+
+// ==========================================
+// CANVAS
+// ==========================================
+
+function resizeCanvas() {
+
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    render();
+}
+
+window.addEventListener("resize", resizeCanvas);
+
+
+// ==========================================
+// DIBUJAR FRAME
+// ==========================================
+
+function render() {
+
+    const img = images[Math.round(animation.frame)];
+
+    if (!img || !img.complete || !img.naturalWidth) {
+        return;
+    }
+
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
+
+    const imageRatio = img.naturalWidth / img.naturalHeight;
+    const canvasRatio = canvasWidth / canvasHeight;
+
+    let width;
+    let height;
+
+    if (canvasRatio > imageRatio) {
+
+        width = canvasWidth;
+        height = width / imageRatio;
+
+    } else {
+
+        height = canvasHeight;
+        width = height * imageRatio;
+
+    }
+
+    const x = (canvasWidth - width) / 2;
+    const y = (canvasHeight - height) / 2;
+
+    ctx.clearRect(
+        0,
+        0,
+        canvasWidth,
+        canvasHeight
+    );
+
+    ctx.drawImage(
+        img,
+        x,
+        y,
+        width,
+        height
+    );
+}
+
+
+// ==========================================
+// PRIMER FRAME
+// ==========================================
+
+images[0].onload = function () {
+
+    resizeCanvas();
+
+    render();
+
+};
+
+
+// ==========================================
+// SCROLL → FRAMES
+// ==========================================
+
+gsap.to(animation, {
+
+    frame: frameCount - 1,
+
+    ease: "none",
+
+    snap: "frame",
+
+    scrollTrigger: {
+
+        trigger: ".house-animation",
+
+        start: "top top",
+
+        end: "bottom bottom",
+
+        scrub: 0.5,
+
+        markers: false
+
+    },
+
+    onUpdate: render
+
+});

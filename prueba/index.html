@@ -1,200 +1,536 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-        <title>prueba html</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <body>
+    <title>Inmobiliaria</title>
 
-        <!--INTRO-->
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    </body>
+<body>
+
+    
+
+    <!-- =========================================
+         INTRO / ANIMACIÓN DE LA CASA
+    ========================================== -->
+
+    <section class="house-animation">
+        <canvas id="houseCanvas"></canvas>
+        
+    </section>
+
+
+
+
+    
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
     <header>
+
         <h1>Inmobiliaria</h1>
 
-
         <nav>
-        <a href="">Inicio</a>
-        <a href="">Listado</a>
-        <a href="">Servicios</a>
-        <a href="">Acerca de</a>
-        <a href="">Contacto</a>
+            <a href="index.html">Inicio</a>
+            <a href="propiedades.html">Propiedades</a>
+            <a href="">Servicios</a>
+            <a href="">Acerca de</a>
+            <a href="">Contacto</a>
         </nav>
 
         <div>
             <a href="">Programar vista</a>
         </div>
+
     </header>
 
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
     <main>
+
+        <!-- HERO -->
+
         <section class="hero">
-         <img src="./casa.png" width="300"/>
 
-         <h1>Encuentra la casa de tus sueños</h1>
+            <img src="./casa.png" width="300" alt="Casa">
 
-            <p>Descubre la propiedad perfecta para ti y tu familia.</p>
-             
-            <!--buscador de propiedades-->
+            <h1>Encuentra la casa de tus sueños</h1>
+
+            <p>
+                Descubre la propiedad perfecta para ti y tu familia.
+            </p>
+
+
+            <!-- BUSCADOR -->
+
             <div class="buscador-propiedades">
-                <!--comprar o rentar-->
-<div class="campo-busqueda operacion">
-    <button class="opcion-operacion activa" data-operacion="comprar">
-        Comprar
-    </button>
 
-    <button class="opcion-operacion" data-operacion="rentar">
-        Rentar
-    </button>
-</div>
+                <!-- Comprar / Rentar -->
 
-                <!--ubicación-->
+                <div class="campo-busqueda operacion">
+
+                    <button
+                        class="opcion-operacion activa"
+                        data-operacion="comprar">
+                        Comprar
+                    </button>
+
+                    <button
+                        class="opcion-operacion"
+                        data-operacion="rentar">
+                        Rentar
+                    </button>
+
+                </div>
+
+
+                <!-- Ubicación -->
+
                 <div class="campo-busqueda">
-                    <label for="ubicacion">Ubicación</label>
+
+                    <label for="ubicacion">
+                        Ubicación
+                    </label>
 
                     <select id="ubicacion">
-                        <option value="">Seleccionar ubicación</option>
-                        <option value="zona 10">Zona 10</option>
-                        <option value="zona 14">Zona 14</option>
-                        <option value="zona 15">Zona 15</option>
-                        <option value="Carretera a el salvador">Carretera a el salvador</option>
-                        <option value="Mixco">Mixco</option>
+
+                        <option value="">
+                            Seleccionar ubicación
                         </option>
+
+                        <option value="zona 10">
+                            Zona 10
+                        </option>
+
+                        <option value="zona 14">
+                            Zona 14
+                        </option>
+
+                        <option value="zona 15">
+                            Zona 15
+                        </option>
+
+                        <option value="Carretera a el salvador">
+                            Carretera a El Salvador
+                        </option>
+
+                        <option value="Mixco">
+                            Mixco
+                        </option>
+
                     </select>
+
                 </div>
 
-                <!--tipo de propiedad-->
+
+                <!-- Tipo de propiedad -->
+
                 <div class="campo-busqueda">
-                    <label for="tipo">Tipo de propiedad</label>
+
+                    <label for="tipo">
+                        Tipo de propiedad
+                    </label>
+
                     <select id="tipo">
-                        <option value="">Seleccionar tipo</option>
-                        <option value="casa">Casa</option>
-                        <option value="apartamento">Apartamento</option>
-                        <option value="terreno">Terreno</option>
+
+                        <option value="">
+                            Seleccionar tipo
+                        </option>
+
+                        <option value="casa">
+                            Casa
+                        </option>
+
+                        <option value="apartamento">
+                            Apartamento
+                        </option>
+
+                        <option value="terreno">
+                            Terreno
+                        </option>
+
                     </select>
+
                 </div>
 
-                <!--Boton-->
-                <Button id="BuscarPropiedades">
+
+                <!-- Botón -->
+
+                <button id="BuscarPropiedades">
+
                     Buscar
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-                </Button>
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none" />
+
+                        <path
+                            d="M3 10a7 7 0 1 0 14 0a7 7 0 0 0 -14 0" />
+
+                        <path
+                            d="M21 21l-6 -6" />
+
+                    </svg>
+
+                </button>
 
             </div>
-            
+
         </section>
 
 
+        <!-- =========================================
+             PROPIEDADES DESTACADAS
+        ========================================== -->
+
         <section class="propiedades-destacadas">
 
-    <div class="propiedades-header">
+            <div class="propiedades-header">
 
-        <div>
-            <h2>Propiedades destacadas</h2>
-            <p>Descubre nuestra selección de propiedades.</p>
-        </div>
+                <div>
 
-        <a href="propiedades.html" class="ver-todas">
-            Ver todas →
-        </a>
+                    <h2>
+                        Propiedades destacadas
+                    </h2>
 
-    </div>
+                    <p>
+                        Descubre nuestra selección de propiedades.
+                    </p>
 
-
-    <div class="propiedades-grid">
-
-        <!-- PROPIEDAD 1 -->
-        <article class="propiedad-card">
-
-            <div class="propiedad-imagen">
-                <span>VENTA</span>
-                <img src="./casa1.png" alt="Casa en Zona 15">
-            </div>
-
-            <div class="propiedad-info">
-
-                <h3>Q2,500,000</h3>
-
-                <p class="propiedad-ubicacion">
-                    Zona 15, Ciudad de Guatemala
-                </p>
-
-                <div class="propiedad-datos">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bed"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M22 17v-3h-20" /><path d="M2 8v9" /><path d="M12 14h10v-2a3 3 0 0 0 -3 -3h-7v5" /></svg> 4</span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bath"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-3a1 1 0 0 1 1 -1" /><path d="M6 12v-7a2 2 0 0 1 2 -2h3v2.25" /><path d="M4 21l1 -1.5" /><path d="M20 21l-1 -1.5" /></svg> 3</span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-ruler"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 4h14a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-7a1 1 0 0 0 -1 1v7a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1" /><path d="M4 8l2 0" /><path d="M4 12l3 0" /><path d="M4 16l2 0" /><path d="M8 4l0 2" /><path d="M12 4l0 3" /><path d="M16 4l0 2" /></svg> 320 m²</span>
                 </div>
 
+                <a
+                    href="propiedades.html"
+                    class="ver-todas">
+
+                    Ver todas →
+
+                </a>
+
             </div>
 
-        </article>
+
+            <div class="propiedades-grid">
 
 
-        <!-- PROPIEDAD 2 -->
-        <article class="propiedad-card">
+                <!-- PROPIEDAD 1 -->
 
-            <div class="propiedad-imagen">
-                <span>RENTA</span>
-                <img src="./casa2.png" alt="Apartamento en Zona 10">
+                <article class="propiedad-card">
+
+                    <div class="propiedad-imagen">
+
+                        <span>VENTA</span>
+
+                        <img
+                            src="./casa1.png"
+                            alt="Casa en Zona 15">
+
+                    </div>
+
+
+                    <div class="propiedad-info">
+
+                        <h3>
+                            Q2,500,000
+                        </h3>
+
+                        <p class="propiedad-ubicacion">
+                            Zona 15, Ciudad de Guatemala
+                        </p>
+
+                        <div class="propiedad-datos">
+
+                            <span>
+                                🛏️ 4
+                            </span>
+
+                            <span>
+                                🛁 3
+                            </span>
+
+                            <span>
+                                📐 320 m²
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROPIEDAD 2 -->
+
+                <article class="propiedad-card">
+
+                    <div class="propiedad-imagen">
+
+                        <span>RENTA</span>
+
+                        <img
+                            src="./casa2.png"
+                            alt="Apartamento en Zona 10">
+
+                    </div>
+
+
+                    <div class="propiedad-info">
+
+                        <h3>
+                            Q8,500 / mes
+                        </h3>
+
+                        <p class="propiedad-ubicacion">
+                            Zona 10, Ciudad de Guatemala
+                        </p>
+
+                        <div class="propiedad-datos">
+
+                            <span>
+                                🛏️ 2
+                            </span>
+
+                            <span>
+                                🛁 2
+                            </span>
+
+                            <span>
+                                📐 120 m²
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROPIEDAD 3 -->
+
+                <article class="propiedad-card">
+
+                    <div class="propiedad-imagen">
+
+                        <span>VENTA</span>
+
+                        <img
+                            src="./casa3.png"
+                            alt="Casa en Carretera a El Salvador">
+
+                    </div>
+
+
+                    <div class="propiedad-info">
+
+                        <h3>
+                            Q3,800,000
+                        </h3>
+
+                        <p class="propiedad-ubicacion">
+                            Carretera a El Salvador
+                        </p>
+
+                        <div class="propiedad-datos">
+
+                            <span>
+                                🛏️ 4
+                            </span>
+
+                            <span>
+                                🛁 4
+                            </span>
+
+                            <span>
+                                📐 480 m²
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
             </div>
 
-            <div class="propiedad-info">
+        </section>
 
-                <h3>Q8,500 / mes</h3>
 
-                <p class="propiedad-ubicacion">
-                    Zona 10, Ciudad de Guatemala
+        <!-- =========================================
+             VENTAJAS
+        ========================================== -->
+
+        <section class="ventajas">
+
+            <div class="ventajas-encabezado">
+
+                <h2>
+                    La ventaja de elegirnos
+                </h2>
+
+                <p>
+                    Experiencia, confianza y atención personalizada
+                    para ayudarte a encontrar la propiedad ideal.
                 </p>
 
-                <div class="propiedad-datos">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bed"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M22 17v-3h-20" /><path d="M2 8v9" /><path d="M12 14h10v-2a3 3 0 0 0 -3 -3h-7v5" /></svg> 2</span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bath"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-3a1 1 0 0 1 1 -1" /><path d="M6 12v-7a2 2 0 0 1 2 -2h3v2.25" /><path d="M4 21l1 -1.5" /><path d="M20 21l-1 -1.5" /></svg> 2</span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-ruler"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 4h14a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-7a1 1 0 0 0 -1 1v7a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1" /><path d="M4 8l2 0" /><path d="M4 12l3 0" /><path d="M4 16l2 0" /><path d="M8 4l0 2" /><path d="M12 4l0 3" /><path d="M16 4l0 2" /></svg> 120 m²</span>
-                </div>
+            </div>
+
+
+            <div class="ventajas-grid">
+
+
+                <!-- TARJETA 1 -->
+
+                <article class="ventaja-card">
+
+                    <div class="ventaja-icono">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path d="M12 3a9 9 0 1 0 9 9" />
+                            <path d="M3.6 9h16.8" />
+                            <path d="M3.6 15h16.8" />
+                            <path d="M11.5 3a17 17 0 0 0 0 18" />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Amplia variedad
+                    </h3>
+
+                    <p>
+                        Accede a una selección de propiedades en distintas
+                        zonas, precios y estilos para encontrar la opción ideal.
+                    </p>
+
+                </article>
+
+
+                <!-- TARJETA 2 -->
+
+                <article class="ventaja-card">
+
+                    <div class="ventaja-icono">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path
+                                d="M12 22s8 -4 8 -10v-6l-8 -3l-8 3v6c0 6 8 10 8 10" />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Confianza y seguridad
+                    </h3>
+
+                    <p>
+                        Te acompañamos durante todo el proceso con información clara,
+                        atención profesional y asesoría personalizada.
+                    </p>
+
+                </article>
+
+
+                <!-- TARJETA 3 -->
+
+                <article class="ventaja-card">
+
+                    <div class="ventaja-icono">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path d="M6 3h12l3 5l-9 13l-9 -13z" />
+                            <path d="M3 8h18" />
+                            <path d="M12 21l4 -13l-4 -5l-4 5z" />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Servicio personalizado
+                    </h3>
+
+                    <p>
+                        Escuchamos tus necesidades para ofrecerte propiedades
+                        que realmente se adapten a lo que estás buscando.
+                    </p>
+
+                </article>
 
             </div>
 
-        </article>
-
-
-        <!-- PROPIEDAD 3 -->
-        <article class="propiedad-card">
-
-            <div class="propiedad-imagen">
-                <span>VENTA</span>
-                <img src="./casa3.png" alt="Casa en Carretera a El Salvador">
-            </div>
-
-            <div class="propiedad-info">
-
-                <h3>Q3,800,000</h3>
-
-                <p class="propiedad-ubicacion">
-                    Carretera a El Salvador
-                </p>
-
-                <div class="propiedad-datos">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bed"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M22 17v-3h-20" /><path d="M2 8v9" /><path d="M12 14h10v-2a3 3 0 0 0 -3 -3h-7v5" /></svg> 4<span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bath"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-3a1 1 0 0 1 1 -1" /><path d="M6 12v-7a2 2 0 0 1 2 -2h3v2.25" /><path d="M4 21l1 -1.5" /><path d="M20 21l-1 -1.5" /></svg> 4</span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-ruler"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 4h14a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-7a1 1 0 0 0 -1 1v7a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1" /><path d="M4 8l2 0" /><path d="M4 12l3 0" /><path d="M4 16l2 0" /><path d="M8 4l0 2" /><path d="M12 4l0 3" /><path d="M16 4l0 2" /></svg> 480 m²</span>
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
+        </section>
 
     </main>
-    <footer>
 
+
+    <footer>
 
     </footer>
 
 
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
 
 </html>
